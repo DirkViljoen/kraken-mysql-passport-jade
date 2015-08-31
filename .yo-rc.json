@@ -1,0 +1,13 @@
+{
+  "generator-kraken": {
+    "taskModule": "grunt",
+    "description": "How to get kraken, Jade, mySQL and Passport to play nicely",
+    "author": "DirkViljoen",
+    "templateModule": false,
+    "i18n": false,
+    "componentPackager": "bower",
+    "cssModule": false,
+    "jsModule": false,
+    "useJson": null
+  }
+}
