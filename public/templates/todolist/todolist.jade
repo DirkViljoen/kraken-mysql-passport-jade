@@ -1,0 +1,34 @@
+extends ../layouts/master
+include ../../mixins/mixins
+
+block content
+    br
+    .row
+        .col-sm-2.col-md-3
+        .col-sm-8.col-md-6
+            form.form-signin.form-horizontal(id="todolist", ng-controller="TodolistController", ng-init='initTodoList(1)')
+                .grouphead
+                    h3 Stuff that needs doing
+                .groupbox
+                    .row
+                        .col-md-1
+                        .col-md-10.table-responsive
+                            table.table(id="todo")
+                                thead
+                                    tr
+                                        th
+                                        th Item
+                                        th Last action
+                                tbody
+                                    tr(ng-repeat="row in todolist")
+                                        td
+                                            .btn.btn-defualt(type="button" ng-click="completeRemoveItem($index)") {{row.nextAction}}
+                                        td
+                                            mixin ng-input-text-min('item', 'row.item', 'Create a new item...', true, false, '0', '100')
+                                        td {{row.user}}
+                                    tr
+                                        td
+                                            .btn.btn-default(type="button" ng-click="addItem()") New
+
+                div
+                    p todolist: {{todolist}}

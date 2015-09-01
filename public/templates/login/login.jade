@@ -1,0 +1,44 @@
+include ../../mixins/mixins
+
+html(lang="en", ng-app="app")
+    head
+    head
+        meta(name='csrf-token', content=_csrf)
+
+        title kmpj - playground
+
+        //- bower css files
+        link(rel="stylesheet", href="/bower_components/bootstrap/dist/css/bootstrap.min.css")
+
+        //- my css files
+        link(rel="stylesheet", href="/css/markup.css")
+
+    body.container-fluid
+        .row
+            .col-sm-2.col-md-3
+            .col-sm-8.col-md-6
+                form.form-signin.form-horizontal(id="login", ng-controller="LoginController", ng-init='initLogin("' + _csrf + '")')
+                    .grouphead
+                        h3 Login
+                    .groupbox
+                        mixin ng-input-text('username', 'Username:', 'login.user', 'Please enter your username', true, false, '0', '50')
+                        mixin ng-input-password('password', 'Password', 'login.password', 'Please enter your password', true, false, '0', '50')
+                        .row
+                            .col-xs-10
+                            .col-xs-2
+                                ul.nav.nav-pills.pull-right
+                                    li(role='presentation')
+                                        input.btn.btn-primary(type="button", value="Login", ng-click='postLogin()')
+
+                    div
+                        p login: {{login}}
+
+        //- bower script files
+        script(src="/bower_components/jquery/dist/jquery.min.js")
+        script(src='/bower_components/angular/angular.min.js')
+        script(src="/bower_components/bootstrap/dist/js/bootstrap.min.js")
+
+        //- my script files
+        script(src="/js/angularModule.js")
+    br
+

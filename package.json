@@ -10,9 +10,10 @@
     "all": "npm run build && npm run test"
   },
   "dependencies": {
-    "kraken-js": "^1.0.3",
+    "express": "^4.12.2",
+    "jade": "^1.11.0",
     "kraken-devtools": "^1.2.1",
-    "express": "^4.12.2"
+    "kraken-js": "^1.0.3"
   },
   "devDependencies": {
     "grunt": "^0.4.5",

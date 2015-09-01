@@ -3,3 +3,5 @@ node_modules
 .DS_Store
 npm-debug.log
 public/bower_components
+kmpj.sublime-project
+kmpj.sublime-workspace

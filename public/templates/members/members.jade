@@ -1,0 +1,38 @@
+extends ../layouts/master
+include ../../mixins/mixins
+
+block content
+    br
+    .row
+        .col-sm-2.col-md-3
+        .col-sm-8.col-md-6
+            form.form-signin.form-horizontal(id="formmembers", ng-controller="MembersController", ng-init='initTodoMembers(1)')
+                .grouphead
+                    h3 The cool people that have access
+                .groupbox
+                    .row
+                        .col-md-1
+                        .col-md-10.table-responsive
+                            table.table(id="tablemembers")
+                                thead
+                                    tr
+                                        th
+                                        th Username
+                                        th Password
+                                        th Admin
+                                tbody
+                                    tr(ng-repeat="row in members")
+                                        td
+                                            .btn.btn-defualt(type="button" ng-click="removemember($index)") Remove
+                                        td
+                                            +ng-input-text-min('username', 'row.username', '', true, false, '0', '50', 'dirtyUsername($index)')
+                                        td
+                                            +ng-input-password-min('password', 'row.password', '', true, false, '0', '100', 'dirtyPassword($index)')
+                                        td
+                                            input(type="checkbox" ng-model="row.admin", ng-change='dirtyRole($index)')
+                                    tr
+                                        td
+                                            .btn.btn-default(type="button" ng-click="addmember()") Add
+
+                div
+                    p members: {{members}}

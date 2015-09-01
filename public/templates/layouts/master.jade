@@ -1,0 +1,39 @@
+html(lang="en", ng-app="app")
+    head
+    head
+        meta(name='csrf-token', content=_csrf)
+
+        title kmpj - playground
+
+        //- bower css files
+        link(rel="stylesheet", href="/bower_components/bootstrap/dist/css/bootstrap.min.css")
+
+        //- my css files
+        link(rel="stylesheet", href="/css/markup.css")
+
+    body.container-fluid
+
+        nav.navbar.navbar-default
+          .container-fluid
+            button.navbar-toggle.collapsed(type="button" data-toggle="collapse" data-target="#menu" aria-expanded="false")
+                span.sr-only Toggle navigation
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            .collapse.navbar-collapse(id="menu")
+              ul.nav.navbar-nav
+                li
+                    a(href="/members") Members
+                li
+                    a(href="/todolist") Todo list
+
+        block content
+
+        //- bower script files
+        script(src="/bower_components/jquery/dist/jquery.min.js")
+        script(src='/bower_components/angular/angular.min.js')
+        script(src="/bower_components/bootstrap/dist/js/bootstrap.min.js")
+
+        //- my script files
+        script(src="/js/angularModule.js")

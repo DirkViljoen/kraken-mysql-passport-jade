@@ -1,17 +1,26 @@
 {
 
-    
 
-    
 
-    
+    "express": {
+        "view cache": false,
+        "view engine": "jade",
+        "views": "path:./public/templates/"
+    },
+
+    "view engines": {
+        "jade": {
+            "module": "jade",
+            "renderer": "__express"
+        }
+    },
 
     "specialization": {
     },
 
     "middleware": {
 
-        
+
 
         "static": {
             "module": {
